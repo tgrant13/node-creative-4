@@ -17,10 +17,18 @@ router.post('/names', function(req, res) {
     console.log("In getnames post");
     var name = req.body.name;
 	request('https://api.genderize.io/?name=' + name, function(error, response, body){
-    var data = JSON.parse(body);  
+    var data = JSON.parse(body); 
+    console.log(data.probability);
+    if(data.probability !== undefined){
+      var i = data.probability * 100;
+      var str = i + "%";
+    } else{
+      str = "";
+    }
     var name = {
       name: data.name,
-      gender: data.gender
+      gender: data.gender,
+      prob: str
     }
 		names.push(name);
 		res.end('{"success" : "Updated Successfully", "status" : 200}');
