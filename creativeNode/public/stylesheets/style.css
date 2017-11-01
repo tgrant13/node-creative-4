@@ -39,6 +39,7 @@ a{
 }
 
 .h1 {
+  padding-top: 40px;
   margin: 0;
   color: white;
 }
