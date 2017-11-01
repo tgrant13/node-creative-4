@@ -18,7 +18,7 @@ function nameFetcher ($http) {
 
 }
 
-function mainCtrl ($scope, nameFetcher, $http) {
+function mainCtrl ($scope, nameFetcher, $http, $location) {
 
   $scope.names = []
 
@@ -35,7 +35,7 @@ function mainCtrl ($scope, nameFetcher, $http) {
         method: "POST",
         data: formData
       }).success(function(data, status, headers, config) {
-        console.log("Post worked");
+        location.reload();
       }).error(function(data, status, headers, config) {
         console.log("Post failed");
       });
