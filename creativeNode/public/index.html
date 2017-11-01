@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="javascripts/app.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <meta charset="utf-8">
 	<title>Guess My Gender</title>
 </head>
 <body>
 	<h1> THE GENDERIZER </h1>
+	<div id='app' ng-app='app' ng-controller='mainCtrl'>
+
+    <div ng-if='!names.length' class='no-names center stretch'>
+      <h1 class='h1'>
+        Looks like we're missing some Names, add some to see the gender here!
+      </h1>
+    </div>
+
+    <ul ng-if='names.length' class='list center stretch'>
+      <li ng-repeat='n in names' class='name'>
+        <h1>{{ n.name }}</h1>
+        <h1>{{n.gender}}</h1>
+      </li>
+    </ul>
+
+    <h1> Enter a New Name</h1>
+    <form id="newName" ng-submit="addName()">
+        Name: <input type="text" ng-model="Name" value="">
+        <input type="submit" value="Submit">
+    </form>
+
+  </div>
 </body>
 </html>
