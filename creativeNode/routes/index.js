@@ -30,7 +30,7 @@ router.post('/names', function(req, res) {
       gender: data.gender,
       prob: str
     }
-		names.push(name);
+		names.unshift(name);
 		res.end('{"success" : "Updated Successfully", "status" : 200}');
 	})
 }); 
