@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id='app' ng-app='app' ng-controller='mainCtrl'>
-    <nav class="navbar navbar-default">
+    <nav class="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -52,7 +52,7 @@
 
     <ul ng-if='names.length' class='list center stretch'>
       <li ng-repeat='n in names' class='name'>
-        <h1 ng-class="{blue : n.gender == 'male', pink: n.gender == 'female', grey: n.gender == null}" >{{n.name}} {{n.prob}}</h1>
+        <h1 ng-class="{blue : n.gender == 'male', pink: n.gender == 'female', grey: n.gender == null}" class="li">{{n.name}} {{n.prob}}</h1>
       </li>
     </ul>
   </div>
