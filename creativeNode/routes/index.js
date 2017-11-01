@@ -15,11 +15,15 @@ router.get('/names', function(req, res) {
 
 router.post('/names', function(req, res) {
     console.log("In getnames post");
-    console.log(req.body);
-    var name = req.query.name;
+    var name = req.body.name;
 	request('https://api.genderize.io/?name=' + name, function(error, response, body){
-		names.push(req.body);
-		res.send(body);
+    var data = JSON.parse(body);  
+    var name = {
+      name: data.name,
+      gender: data.gender
+    }
+		names.push(name);
+		res.end('{"success" : "Updated Successfully", "status" : 200}');
 	})
 }); 
 

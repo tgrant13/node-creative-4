@@ -28,17 +28,16 @@ function mainCtrl ($scope, nameFetcher, $http) {
     })
 
     $scope.addName = function() {
-  var formData = {name:$scope.Name};
-  console.log(formData);
-  var nameURL = 'names';
-  $http({
-     url: nameURL,
-     method: "POST",
-     data: formData
-  }).success(function(data, status, headers, config) {
-    console.log("Post worked");
-  }).error(function(data, status, headers, config) {
-    console.log("Post failed");
-  });
+      var formData = {name: $scope.name};
+      var nameURL = 'names';
+      $http({
+        url: nameURL,
+        method: "POST",
+        data: formData
+      }).success(function(data, status, headers, config) {
+        console.log("Post worked");
+      }).error(function(data, status, headers, config) {
+        console.log("Post failed");
+      });
 }
 }

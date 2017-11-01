@@ -3,13 +3,37 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 <script src="javascripts/app.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <meta charset="utf-8">
 	<title>Guess My Gender</title>
 </head>
 <body>
-	<h1> THE GENDERIZER </h1>
 	<div id='app' ng-app='app' ng-controller='mainCtrl'>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">THE GENDERIZER</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
     <div ng-if='!names.length' class='no-names center stretch'>
       <h1 class='h1'>
@@ -19,17 +43,21 @@
 
     <ul ng-if='names.length' class='list center stretch'>
       <li ng-repeat='n in names' class='name'>
-        <h1>{{ n.name }}</h1>
+        <h1>{{n.name}}</h1>
         <h1>{{n.gender}}</h1>
       </li>
     </ul>
 
     <h1> Enter a New Name</h1>
     <form id="newName" ng-submit="addName()">
-        Name: <input type="text" ng-model="Name" value="">
+        Name: <input type="text" ng-model="name" value="">
         <input type="submit" value="Submit">
     </form>
 
   </div>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 </body>
 </html>
