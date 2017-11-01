@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 <script src="javascripts/app.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <meta charset="utf-8">
+
 	<title>Guess My Gender</title>
 </head>
 <body>
 	<div id='app' ng-app='app' ng-controller='mainCtrl'>
-    <nav class="navbar transparent">
+    <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationbar" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -25,7 +30,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navigationbar">
       <form id="newName" class="navbar-form navbar-right" ng-submit="addName()">
         <div class="form-group">
           <input type="text" ng-model="name" value="" class="form-control" placeholder="Name">
@@ -50,11 +55,7 @@
         <h1 ng-class="{blue : n.gender == 'male', pink: n.gender == 'female', grey: n.gender == null}" >{{n.name}} {{n.prob}}</h1>
       </li>
     </ul>
-
   </div>
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  
 </body>
 </html>
