@@ -5,7 +5,7 @@ app.controller('mainCtrl', mainCtrl)
 
 function nameFetcher ($http) {
 
-  var API_ROOT = 'name'
+  var API_ROOT = 'names'
   return {
     get: function () {
       return $http
